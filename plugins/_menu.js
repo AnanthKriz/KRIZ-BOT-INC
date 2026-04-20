@@ -39,18 +39,19 @@ Kriz({
             ] = new Date().toLocaleString("en-IN", {
                 timeZone: "Asia/Kolkata"
             }).split(",");
-            let menu = `╭━━━〔${config.BOT_INFO.split(";")[0].toLowerCase()}〕━━>
-┃╭━━━━━━━━━━━━━◉
-┃┃•  owner : ${config.BOT_INFO.split(";")[1].toLowerCase()}
-┃┃•  mode : ${config.WORK_TYPE.toLowerCase()}
-┃┃•  prefix : ${m.prefix}
-┃┃•  platform : ${SERVER}
-┃┃•  date : ${date}
-┃┃•  time : ${time}
-┃┃•  uptime : ${await m.uptime()}
-┃┃•  plugins : ${commands.length}
-┃╰━━━━━━━━━━━━━◉
-╰━━━━━━━━━━━━━>\n ${readMore}\n\n`;
+            let menu = `╔══════════════════════════════╗
+║   ${config.BOT_INFO.split(";")[0].toUpperCase()}
+╠══════════════════════════════╣
+║ OWNER     ${config.BOT_INFO.split(";")[1].toLowerCase()}
+║ MODE      ${config.WORK_TYPE.toLowerCase()}
+║ PREFIX    ${m.prefix}
+║ PLATFORM  ${SERVER}
+╠══════════════════════════════╣
+║ DATE      ${date}
+║ TIME      ${time}
+║ UPTIME    ${await m.uptime()}
+║ PLUGINS   ${commands.length}
+╚══════════════════════════════╝\n ${readMore}\n\n`;
 
             let cmnd = [];
             let Sparky;
@@ -80,15 +81,15 @@ Kriz({
 
             cmnd.sort();
             type.sort().forEach((cmmd) => {
-                menu += `╭━━━>
+                menu += `╔══════════════════════════════╗
 ┠┌─⭓『 *${cmmd.toUpperCase()}* 』\n`;
                 let comad = cmnd.filter(({ category }) => category == cmmd);
                 comad.sort();
                 comad.forEach(({ Sparky }) => {
-                    menu += `┃│• ${Sparky.trim()}\n`;
+                    menu += `║ ${Sparky.trim()}\n`;
                 });
-                menu += `┃└─⭓\n`;
-                menu += `╰━━━━>\n`;
+                menu += `╠══════════════════════════════╣\n`;
+                menu += `╚══════════════════════════════╝\n`;
             });
             let sperky = {
                 "key": {
