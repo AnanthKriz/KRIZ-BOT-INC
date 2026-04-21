@@ -114,7 +114,7 @@ Sparky({
                             externalAdReply: {
                                 title: style(`Hey ${m.pushName}!`),
                                 body: style(`${config.BOT_INFO.split(";")[0]}`),
-                                sourceUrl: "https://https://aswinsparky.qzz.io",
+                                sourceUrl: "https://www.ananthkriz.online/",
                                 mediaType: 1,
                                 showAdAttribution: true,
                                 renderLargerThumbnail: true,
@@ -135,8 +135,8 @@ Sparky({
                             externalAdReply: {
                                 title: style(`Hey ${m.pushName}!`),
                                 body: style(`${config.BOT_INFO.split(";")[0]}`),
-                                sourceUrl: "https://https://aswinsparky.qzz.io",
-                                mediaUrl: "https://https://aswinsparky.qzz.io",
+                                sourceUrl: "https://www.ananthkriz.online/",
+                                mediaUrl: "https://www.ananthkriz.online/",
                                 mediaType: 1,
                                 showAdAttribution: true,
                                 renderLargerThumbnail: false,
