@@ -4,10 +4,7 @@ RUN apk update && apk add --no-cache git ffmpeg
 
 WORKDIR /sparky/xbotmd
 
-RUN git clone https://github.com/AnanthKriz/KRIZ-BOT-INC .
-
-RUN git config --global --add safe.directory /sparky/xbotmd
-
+# Install dependencies as early as possible for caching
 COPY package.json yarn.lock* ./
 
 RUN yarn install --ignore-engines
