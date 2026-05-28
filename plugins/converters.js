@@ -73,10 +73,58 @@ Sparky(
             m.react("⏫");
 		let buff = await m.quoted.download();
 		return await m.sendFile(buff);
-        } catch (e) {
-            return m.react("❌");
-        } 
-    });
+const axios = require("axios");
+const FormData = require("form-data");
+
+async function handleMediaUpload(buffer) {
+
+    const form = new FormData();
+
+    form.append("fileToUpload", buffer, "file.jpg");
+    form.append("reqtype", "fileupload");
+
+    const res = await axios.post(
+        "https://catbox.moe/user/api.php",
+        form,
+        { headers: form.getHeaders() }
+    );
+
+    return res.data;
+}
+
+Sparky({
+    name: "url",
+    fromMe: true,
+    category: "converters",
+}, async ({ m }) => {
+
+    if (!m.quoted) {
+        return m.reply("Reply to media");
+    }
+
+    try {
+
+        await m.react("⏫");
+
+        const buffer =
+            await m.quoted.downloadMediaMessage();
+
+        const url =
+            await handleMediaUpload(buffer);
+
+        await m.react("✅");
+
+        return m.reply(url);
+
+    } catch (e) {
+
+        console.log(e);
+
+        await m.react("❌");
+
+        return m.reply("Failed");
+    }
+});
 
 Sparky({
 		name: "sticker",
