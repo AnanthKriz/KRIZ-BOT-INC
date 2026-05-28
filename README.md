@@ -17,10 +17,10 @@
 
 ### SCAN QR
 
-2. Scan the QR and get the SESSION ID
+2. Add the Number and get the SESSION ID
    <br>
 <a href='https://session.ananthkriz.online' target="_blank">
-    <img alt='SCAN QR' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/>
+    <img alt='Add num' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/>
 </a>
 
 #### DEPLOY TO PANEL
