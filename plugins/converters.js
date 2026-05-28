@@ -16,7 +16,7 @@ Sparky({
     try {
         await m.react('⏫');
       const mediaBuffer = await m.quoted.download();
-      const mediaUrl = await handleMediaUpload(mediaBuffer);
+      const mediaUrl = await UploadMedia(mediaBuffer);
       await m.react('✅');
       m.reply(mediaUrl);
     } catch (error) {
