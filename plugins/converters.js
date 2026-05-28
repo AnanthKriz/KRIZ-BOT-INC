@@ -7,35 +7,23 @@ const lang = getString('converters');
 Sparky({
     name: "url",
     fromMe: true,
-    desc: "Upload media and get URL",
+    desc: "",
     category: "converters",
-}, async ({ m }) => {
-
+  }, async ({ args, m }) => {
     if (!m.quoted) {
-        return m.reply("Reply to an Image/Video/Audio");
+      return m.reply('Reply to an Image/Video/Audio');
     }
-
     try {
-
-        await m.react("⏫");
-
-        const buffer = await m.quoted.download();
-
-        const url = await handleMediaUpload(buffer);
-
-        await m.react("✅");
-
-        return m.reply(url);
-
-    } catch (e) {
-
-        console.log(e);
-
-        await m.react("❌");
-
-        return m.reply("Upload failed");
+        await m.react('⏫');
+      const mediaBuffer = await m.quoted.download();
+      const mediaUrl = await uploadMedia(mediaBuffer);
+      await m.react('✅');
+      m.reply(mediaUrl);
+    } catch (error) {
+        await m.react('❌');
+      m.reply('An error occurred while uploading the media.');
     }
-});
+  });
 Sparky(
   {
     name: "trt",
