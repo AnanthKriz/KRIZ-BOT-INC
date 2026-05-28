@@ -15,12 +15,12 @@
 
 
 
-### SCAN QR
+### Pair session 
 
 2. Add the Number and get the SESSION ID
    <br>
 <a href='https://session.ananthkriz.online' target="_blank">
-    <img alt='Add num' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/>
+    <img alt='Add num' src='https://img.shields.io/badge/pair_session-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/>
 </a>
 
 #### DEPLOY TO PANEL
